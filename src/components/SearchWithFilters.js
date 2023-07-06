@@ -52,31 +52,6 @@ const Search = () => {
       })
       .catch((err) => console.log({ err }));
   }, []);
-
-  useEffect(() => {
-    search(1);
-    setCurrentPage(1);
-  }, [breedsSelect, ageSelect, sortBy, search]);
-
-  const handleBreedSelect = useCallback((event, value) => {
-    setBreedsSelect(value);
-  }, []);
-
-  const handleMinAge = useCallback((event, value) => {
-    setAgeSelect((prevState) => ({ ...prevState, ageMin: value }));
-  }, []);
-
-  const handleMaxAge = useCallback((event, value) => {
-    setAgeSelect((prevState) => ({ ...prevState, ageMax: value }));
-  }, []);
-
-  const handleSort = useCallback((event) => {
-    const selectedSortBy = sortOptions.find(
-      (option) => option.title === event.target.innerText
-    )?.sortBy;
-    setSortBy(selectedSortBy);
-  }, [sortOptions]);
-
   const search = useCallback(
     (pageNumber) => {
       let params = {
@@ -102,6 +77,55 @@ const Search = () => {
     },
     [ageSelect, breedsSelect, sortBy]
   );
+  useEffect(() => {
+    search(1);
+    setCurrentPage(1);
+  }, [breedsSelect, ageSelect, sortBy, search]);
+
+  const handleBreedSelect = useCallback((event, value) => {
+    setBreedsSelect(value);
+  }, []);
+
+  const handleMinAge = useCallback((event, value) => {
+    setAgeSelect((prevState) => ({ ...prevState, ageMin: value }));
+  }, []);
+
+  const handleMaxAge = useCallback((event, value) => {
+    setAgeSelect((prevState) => ({ ...prevState, ageMax: value }));
+  }, []);
+
+  const handleSort = useCallback((event) => {
+    const selectedSortBy = sortOptions.find(
+      (option) => option.title === event.target.innerText
+    )?.sortBy;
+    setSortBy(selectedSortBy);
+  }, [sortOptions]);
+
+  // const search = useCallback(
+  //   (pageNumber) => {
+  //     let params = {
+  //       breeds: breedsSelect,
+  //       sort: sortBy,
+  //       from: (pageNumber - 1) * 25,
+  //     };
+  //     if (ageSelect.ageMin !== null) {
+  //       params["ageMin"] = ageSelect.ageMin;
+  //     }
+  //     if (ageSelect.ageMax !== null) {
+  //       params["ageMax"] = ageSelect.ageMax;
+  //     }
+
+  //     axiosWithAuth()
+  //       .get(`/dogs/search`, {
+  //         params: params,
+  //       })
+  //       .then((res) => {
+  //         setDogResults(res.data);
+  //       })
+  //       .catch((err) => console.log({ err }));
+  //   },
+  //   [ageSelect, breedsSelect, sortBy]
+  // );
 
   const onPageChange = useCallback(
     (pageNumber) => {
