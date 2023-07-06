@@ -56,7 +56,7 @@ const Search = () => {
   useEffect(() => {
     search(1);
     setCurrentPage(1);
-  }, [breedsSelect, ageSelect, sortBy]);
+  }, [breedsSelect, ageSelect, sortBy, search]);
 
   const handleBreedSelect = useCallback((event, value) => {
     setBreedsSelect(value);

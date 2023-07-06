@@ -6,7 +6,6 @@ import {
   CardContent,
   CardMedia,
   Box,
-  IconButton,
 } from "@mui/material";
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
@@ -28,7 +27,7 @@ const Dog = (props) => {
         <CardMedia
           component="img"
           image={props.dogMatch?.img || ""}
-          alt={'Picture of a ${props.dogMatch?.breed} named ${props.dogMatch?.name}'}
+          alt={`Picture of a ${props.dogMatch?.breed} named ${props.dogMatch?.name}`}
           sx={{ height: 350 }}
         />
         <CardContent>
