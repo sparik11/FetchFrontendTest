@@ -1,0 +1,28 @@
+header, footer {
+  overflow: hidden;
+  background: #7d0af0;
+}
+
+.MuiButton-outlined, .MuiButton-text, .MuiButton-outlinedWarning {
+  border-color: white;
+}
+
+.MuiTypography-h2, .MuiTypography-h3 {
+  color: #FF8364;
+}
+
+.MuiTypography-subtitle1 {
+  color: gray;
+}
+
+.MuiTypography-subtitle2 {
+  color: lightgray;
+}
+
+.MuiTypography-body1 {
+  color: black;
+}
+
+.MuiTypography-body2 {
+  color: gray;
+}

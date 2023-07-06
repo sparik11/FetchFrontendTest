@@ -1,0 +1,40 @@
+$color_1: white;
+$color_2: gray;
+$color_3: #FF8364;
+$color_4: #FFB677;
+$color_5: #5F6CAF;
+$background-color_1: #F9F2ED;
+$background-color_2: #5F6CAF;
+
+header,
+footer {
+	overflow: hidden;
+	background: $background-color_2;
+}
+
+.MuiButton-outlined,
+.MuiButton-text,
+.MuiButton-outlinedWarning {
+	border-color: white;
+}
+
+.MuiTypography-h2,
+.MuiTypography-h3 {
+	color: $color_3;
+}
+
+.MuiTypography-subtitle1 {
+	color: gray;
+}
+
+.MuiTypography-subtitle2 {
+	color: lightgray;
+}
+
+.MuiTypography-body1 {
+	color: black;
+}
+
+.MuiTypography-body2 {
+	color: gray;
+}
