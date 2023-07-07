@@ -101,32 +101,6 @@ const Search = () => {
     setSortBy(selectedSortBy);
   }, [sortOptions]);
 
-  // const search = useCallback(
-  //   (pageNumber) => {
-  //     let params = {
-  //       breeds: breedsSelect,
-  //       sort: sortBy,
-  //       from: (pageNumber - 1) * 25,
-  //     };
-  //     if (ageSelect.ageMin !== null) {
-  //       params["ageMin"] = ageSelect.ageMin;
-  //     }
-  //     if (ageSelect.ageMax !== null) {
-  //       params["ageMax"] = ageSelect.ageMax;
-  //     }
-
-  //     axiosWithAuth()
-  //       .get(`/dogs/search`, {
-  //         params: params,
-  //       })
-  //       .then((res) => {
-  //         setDogResults(res.data);
-  //       })
-  //       .catch((err) => console.log({ err }));
-  //   },
-  //   [ageSelect, breedsSelect, sortBy]
-  // );
-
   const onPageChange = useCallback(
     (pageNumber) => {
       search(pageNumber);
